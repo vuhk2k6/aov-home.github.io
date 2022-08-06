@@ -1,12 +1,10 @@
 .grid {
-    width: 100%;
     display: block;
     padding: 0;
 }
 
 .grid.wide {
     margin: 0 auto;
-    max-width: 868px;
 }
 
 .row {
@@ -129,7 +127,11 @@
 }
 
 /* >= Tablet */
-@media (min-width: 740px) {
+@media (min-width: 740px) and (max-width: 1024px){
+    .grid.wide {
+        margin: 0 24px;
+    }
+
     .m-0 {
         display: none;
     }
@@ -390,16 +392,17 @@
 }
 
 /* Tablet - PC low resolution */
-@media (min-width: 740px) and (max-width: 1023px) {
+@media (min-width: 740px) and (max-width: 1024px) {
     .wide {
         margin: 0 auto;
     }
 }
 
 /* > PC low resolution */
-@media (min-width: 1024px) and (max-width: 1239px) {
+@media (min-width: 1024px) and (max-width: 1366px) {
     .wide {
         margin: 0 auto;
+        max-width: 868px;
     }
 
     .wide .l-0 {
@@ -529,5 +532,10 @@
 
     .wide .l-o-11 {
         margin-left: 91.66667%;
+    }
+}
+@media (min-width: 1367px) and (max-width: 1800px) {
+    .grid.wide {
+        max-width: 1113px;
     }
 }

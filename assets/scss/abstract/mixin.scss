@@ -4,3 +4,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 740px) {@content};
+    }
+    @if $breakpoint == tablet {
+        @media (max-width: 1024px) {@content};
+    }
+    @if $breakpoint == laptop {
+        @media (max-width: 1280px) {@content};
+    }
+    @if $breakpoint == pc {
+        @media (max-width: 1800) {@content};
+    }
+}
