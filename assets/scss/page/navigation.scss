@@ -26,12 +26,17 @@
         z-index: 1990;
         text-align: center;
         transition: transform 1s;
-        scale: 80;
     }
     &__checkbox:checked ~ &__nav{
         opacity: 1;
         width: 100%;
+        overflow: hidden;
         height: 100vh;
+        display: block;
+    }
+    &__checkbox:checked ~ &__nav .navigation__list {
+        opacity: 1;
+        visibility: visible;
     }
     &__checkbox:checked ~ &__background {
         transform: scale(80);
@@ -51,6 +56,9 @@
         @include center;
         list-style: none;
         text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 1s;
 
         &-item {
             margin: 1rem;
@@ -72,12 +80,16 @@
                     transparent 50%);
                     background-size: 250%;
                     transition: all .4s;
+                    user-select: none;
                 }
                 &:hover,
                 &:active {
                     background-position: 100%;
                     color: $color-primary;
                     transform: translateY(1px);
+                }
+                &:target .section {
+
                 }
             }
         }

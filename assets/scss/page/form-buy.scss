@@ -1,0 +1,99 @@
+.buy-section {
+    position: fixed;
+    background-color: rgba($color-black, .5);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s;
+
+    & .buy-content {
+        padding: 3rem 4.5rem;
+        position: relative;
+        & .close-form-buy {
+            position: absolute;
+            font-size: 3rem;
+            padding: 1rem;
+            top: 2rem;
+            right: 2rem;
+            text-decoration: none;
+            color: $color-grey;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+
+        & .row {
+            margin-bottom: 3.2rem;
+            margin-right: -1.6rem;
+            margin-left: -1.6rem;
+
+            & .col {
+                padding-left: 1.6rem;
+                padding-right: 1.6rem;
+            }
+        }
+        & .btn, 
+        .btn:link, 
+        .btn:visited {
+            width: 140px;
+        }
+    }
+
+    & .grid.wide {
+        position: absolute;
+        margin: auto;
+    }
+    & .about__heading {
+        justify-content: flex-start;
+        margin-bottom: 3rem;
+    }
+    & .buy-heading {
+        font-size: 1.6rem;
+        color: $color-grey;
+        line-height: 2rem;
+        margin-bottom: 1.2rem;
+        text-transform: capitalize;
+    }
+    & .buy-desc {
+        font-size: 1.4rem;
+        line-height: 1.6rem;
+        color: #777;
+    }
+    & .about__heading h3 {
+        width: auto;
+        margin: 0;
+    }
+
+    & .buy-illustration {
+        object-fit: cover;
+        background-size: 210%;
+        background-position: -4rem;
+        background-repeat: no-repeat;
+    }
+
+    .form-buy {
+        background-color: $color-white;
+        border-radius: 5rem;
+        overflow: hidden;
+        opacity: 0;
+        transform: scale(.5);
+        transition: .5s;
+    }
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target .form-buy {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
