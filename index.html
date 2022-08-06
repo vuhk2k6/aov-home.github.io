@@ -20,10 +20,12 @@
 <body>
     <div class="navigation">
         <input type="checkbox" class="navigation__checkbox" name="" id="nav-toggle">
-        <label for="nav-toggle" class="navigation__button">
+        <button id="nav-menu" class="navigation__button">
+            <div class="nav-toggle">
             <span class="navigation__icon">&nbsp;</span>
-        </label>
-        <div class="navigation__background">&nbsp;</div>
+            </div>
+        </button>
+        <div id="nav" class="navigation__background">&nbsp;</div>
         <div class="navigation__nav">
             <ul class="navigation__list">
                 <li class="navigation__list-item">
@@ -424,5 +426,48 @@
             </div>
         </div>
     </div>
+
+    <script>
+        var navigation = document.getElementById('nav')
+        var navMenu = document.getElementById('nav-menu')
+        
+        navMenu.onclick = function () {
+        }
+    </script>
+
+    <script>
+        const navBg = document.querySelector('.navigation__background')
+        const direcs = document.querySelectorAll('.navigation__list-item-link')
+        const nav = document.querySelector('.navigation__nav')
+        const navList = document.querySelector('.navigation__list')
+        const navClose = document.querySelector('.navigation__button')
+        const navToggle = document.querySelector('.navigation__button')
+        const unNav = document.querySelector('#nav-menu')
+        const closeNav = document.querySelector('.nav-toggle')
+        const navBtn = document.querySelector('.navigation__button')
+
+        function showNav() {
+            navBg.classList.add('open')
+            nav.classList.add('open')
+            navList.classList.add('open')
+            navBtn.classList.add('open')
+        }
+        function hideNav() {
+            navBg.classList.remove('open')
+            nav.classList.remove('open')
+            navList.classList.remove('open')
+            navBtn.classList.remove('open')
+        }
+        console.log(hideNav)
+        for(const direc of direcs) {
+            direc.addEventListener('click', hideNav)
+        }
+        closeNav.addEventListener('click', hideNav)
+        unNav.addEventListener('click', hideNav)
+        navToggle.addEventListener('click', showNav)
+        
+        
+
+    </script>
 </body>
 </html>
