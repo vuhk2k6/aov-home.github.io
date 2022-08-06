@@ -1359,6 +1359,9 @@ html {
 }
 
 @media (max-width: 740px) {
+  .buy-section .buy-content .btn, .buy-section .buy-content .btn:link, .buy-section .buy-content .btn:visited {
+    width: 150px;
+  }
   .skills-section .row {
     margin-left: 0;
     margin-right: 0;
