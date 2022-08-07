@@ -440,31 +440,28 @@
         const direcs = document.querySelectorAll('.navigation__list-item-link')
         const nav = document.querySelector('.navigation__nav')
         const navList = document.querySelector('.navigation__list')
-        const navClose = document.querySelector('.navigation__button')
         const navToggle = document.querySelector('.navigation__button')
-        const unNav = document.querySelector('#nav-menu')
-        const closeNav = document.querySelector('.nav-toggle')
-        const navBtn = document.querySelector('.navigation__button')
 
-        function showNav() {
-            navBg.classList.add('open')
-            nav.classList.add('open')
-            navList.classList.add('open')
-            navBtn.classList.add('open')
-        }
+        // function showNav() {
+        //     navBg.classList.add('open')
+        //     nav.classList.add('open')
+        //     navList.classList.add('open')
+        // }
         function hideNav() {
             navBg.classList.remove('open')
             nav.classList.remove('open')
             navList.classList.remove('open')
-            navBtn.classList.remove('open')
+            navToggle.classList.remove('open')
         }
-        console.log(hideNav)
+        navToggle.onclick = function () {
+            navToggle.classList.toggle('open')
+            navBg.classList.toggle('open')
+            navList.classList.toggle('open')
+            nav.classList.toggle('open')
+        }
         for(const direc of direcs) {
             direc.addEventListener('click', hideNav)
         }
-        closeNav.addEventListener('click', hideNav)
-        unNav.addEventListener('click', hideNav)
-        navToggle.addEventListener('click', showNav)
         
         
 
