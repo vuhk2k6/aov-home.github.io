@@ -33,13 +33,9 @@
     ></script>
     <link rel="stylesheet" href="./assets/aos-master/dist/aos.css" />
     <script src="./assets/aos-master/dist/aos.js"></script>
-    <link rel="stylesheet" href="./assets/css/base.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
-    <link rel="stylesheet" href="./assets/scss/main.scss" />
-    <link rel="stylesheet" href="./assets/css/grid.css" />
-    <link rel="stylesheet" href="./assets/css/responsive.css" />
   </head>
-  <body>
+  <body class="body">
     <div class="navigation">
       <input
         type="checkbox"
@@ -70,6 +66,19 @@
           <li class="navigation__list-item">
             <a href="#help" class="navigation__list-item-link">ask question</a>
           </li>
+          <li class="btn-mode">
+            <input
+              type="checkbox"
+              name=""
+              class="btn-mode-checkbox"
+              id="btn-mode-checkbox"
+            />
+            <label for="btn-mode-checkbox" class="btn-mode-content">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+              <div class="ball"></div>
+            </label>
+          </li>
         </ul>
       </div>
     </div>
@@ -99,7 +108,7 @@
           </div>
           <div class="row about__container">
             <div
-              data-aos="fade-right"
+              data-aos="flip-right"
               data-aos-duration="2000"
               class="col l-6 m-6 c-12 about-left"
             >
@@ -121,7 +130,7 @@
               <a href="" class="btn-more">Learn more &rarr;</a>
             </div>
             <div
-              data-aos="fade-left"
+              data-aos="flip-left"
               data-aos-duration="2000"
               class="col l-6 m-6 c-12 about-right"
             >
@@ -144,7 +153,7 @@
           </div>
         </div>
       </div>
-      <div id="skill" class="skills-section section">
+      <div id="skill" class="skill skills-section section">
         <div class="grid wide">
           <div class="row">
             <div
@@ -219,7 +228,7 @@
           </div>
         </div>
       </div>
-      <div id="skin" class="skin-section section">
+      <div id="skin" class="skin-container skin-section section">
         <div class="grid wide">
           <div
             data-aos="fade-up"
@@ -340,7 +349,7 @@
           </div>
           <div class="center">
             <button
-              data-aos="fade-up"
+              data-aos="fade-down"
               data-aos-duration="2000"
               class="btn btn--blue"
             >
@@ -366,7 +375,7 @@
             <h3>player rating</h3>
           </div>
           <div class="row">
-            <div data-aos="fade-right" data-aos-duration="1500" class="comment">
+            <div data-aos="flip-right" data-aos-duration="1500" class="comment">
               <div class="comment__shape">
                 <img
                   src="./assets/img/rating1.jpg"
@@ -388,7 +397,7 @@
                 </p>
               </div>
             </div>
-            <div data-aos="fade-left" data-aos-duration="1500" class="comment">
+            <div data-aos="flip-left" data-aos-duration="1500" class="comment">
               <div class="comment__shape">
                 <img
                   src="./assets/img/rating2.jpg"
@@ -418,7 +427,7 @@
           </div>
         </div>
       </div>
-      <div id="help" class="help-section section">
+      <div id="help" class="help help-section section">
         <div class="grid wide">
           <div data-aos="fade-up" data-aos-duration="1500" class="help-form">
             <div data-aos="fade-up" data-aos-duration="3000" class="form">
@@ -489,11 +498,7 @@
           </div>
         </div>
         <div class="row">
-          <div
-            data-aos="fade-right"
-            data-aos-duration="2500"
-            class="col l-4 m-4"
-          >
+          <div data-aos="fade-up" data-aos-duration="2500" class="col l-4 m-4">
             <div class="footer__nav">
               <ul class="footer__list">
                 <li class="footer__item">
@@ -512,11 +517,7 @@
             </div>
           </div>
           <div class="col l-4 m-4"></div>
-          <div
-            data-aos="fade-left"
-            data-aos-duration="2500"
-            class="col l-4 m-4"
-          >
+          <div data-aos="fade-up" data-aos-duration="2500" class="col l-4 m-4">
             <p class="footer__copyright">
               2022 - Copyright © by Nguyen Van Vu - 26-Social technology
               company.
@@ -655,24 +656,12 @@
     </div>
 
     <script>
-      var navigation = document.getElementById("nav");
-      var navMenu = document.getElementById("nav-menu");
-
-      navMenu.onclick = function () {};
-    </script>
-
-    <script>
       const navBg = document.querySelector(".navigation__background");
       const direcs = document.querySelectorAll(".navigation__list-item-link");
       const nav = document.querySelector(".navigation__nav");
       const navList = document.querySelector(".navigation__list");
       const navToggle = document.querySelector(".navigation__button");
 
-      // function showNav() {
-      //     navBg.classList.add('open')
-      //     nav.classList.add('open')
-      //     navList.classList.add('open')
-      // }
       function hideNav() {
         navBg.classList.remove("open");
         nav.classList.remove("open");
@@ -688,6 +677,84 @@
       for (const direc of direcs) {
         direc.addEventListener("click", hideNav);
       }
+    </script>
+    <script>
+      const btnMode = document.querySelector(".btn-mode-content");
+      const darkMode = document.querySelector(".body");
+      const darkMode1 = document.querySelectorAll(".btn--white");
+      const darkMode2 = document.querySelectorAll(".btn-link");
+      const aboutMode = document.querySelectorAll(".about__container-title");
+      const aboutMode1 = document.querySelectorAll(".about__container-content");
+      const helfMode = document.querySelector(".help-form");
+      const formMode = document.querySelectorAll(".form__group-input");
+      const formMode1 = document.querySelectorAll(".form__radio-label");
+      const formMode2 = document.querySelectorAll(".form__group-label");
+      const skinMode = document.querySelectorAll(".skin__side--front");
+      const skinMode1 = document.querySelectorAll(".skin__details");
+      const skillMode = document.querySelectorAll(".skill-box");
+      const skillMode1 = document.querySelectorAll(".skill-box__heading");
+      const skillMode2 = document.querySelectorAll(".skill-box__content");
+      const commentMode = document.querySelectorAll(".comment__text");
+      const commentMode1 = document.querySelectorAll(".comment__text-heading");
+      const navigationMode = document.querySelector(".navigation__button");
+      const navigationMode1 = document.querySelectorAll(
+        ".navigation__list-item-link"
+      );
+      const navigationMode2 = document.querySelector(".navigation__icon");
+      const navigationMode3 = document.querySelector(".navigation__background");
+
+      btnMode.onclick = function () {
+        darkMode.classList.toggle("dark");
+        helfMode.classList.toggle("dark");
+        navigationMode.classList.toggle("dark");
+        for (const navigation1 of navigationMode1) {
+          navigation1.classList.toggle("dark");
+        }
+        navigationMode2.classList.toggle("dark");
+        navigationMode3.classList.toggle("dark");
+        for (const dark1 of darkMode1) {
+          dark1.classList.toggle("dark");
+        }
+        for (const dark2 of darkMode2) {
+          dark2.classList.toggle("dark");
+        }
+        for (const about of aboutMode) {
+          about.classList.toggle("dark");
+        }
+        for (const about of aboutMode1) {
+          about.classList.toggle("dark");
+        }
+        for (const form of formMode2) {
+          form.classList.toggle("dark");
+        }
+        for (const form2 of formMode) {
+          form2.classList.toggle("dark");
+        }
+        for (const form1 of formMode1) {
+          form1.classList.toggle("dark");
+        }
+        for (const skill of skillMode) {
+          skill.classList.toggle("dark");
+        }
+        for (const skill1 of skillMode1) {
+          skill1.classList.toggle("dark");
+        }
+        for (const skill2 of skillMode2) {
+          skill2.classList.toggle("dark");
+        }
+        for (const skin of skinMode) {
+          skin.classList.toggle("dark");
+        }
+        for (const skin1 of skinMode1) {
+          skin1.classList.toggle("dark");
+        }
+        for (const comment of commentMode) {
+          comment.classList.toggle("dark");
+        }
+        for (const comment1 of commentMode1) {
+          comment1.classList.toggle("dark");
+        }
+      };
     </script>
     <script>
       AOS.init();
