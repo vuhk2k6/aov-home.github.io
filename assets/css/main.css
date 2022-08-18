@@ -1623,6 +1623,18 @@ html {
     background-image: radial-gradient(150% 200% at 100%, rgba(0, 0, 0, 0.8) 100%, transparent 50%), url(../img/about3.png);
   }
 }
+.form-buy.dark {
+  background-color: #111 !important;
+}
+
+.buy-heading.dark {
+  color: #dbdbdb;
+}
+
+.buy-desc.dark {
+  color: #c3c3c3;
+}
+
 .btn--white.dark {
   background-color: #222;
 }
